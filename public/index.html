@@ -25,13 +25,107 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-  <title>React App</title>
+  <title>TrustStreet</title>
+  <style>
+    .pulse {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      margin-left: -77px;
+      width: 72px;
+      height: 72px;
+      line-height: 72px;
+      font-family: sans-serif;
+      font-weight: 700;
+      font-size: 34px;
+      text-align: center;
+      color: #5abdde;
+    }
+
+    .pulse span,
+    .pulse:before,
+    .pulse:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 0 solid #5abdde;
+      border-radius: 100%;
+      -webkit-animation: da-pulse 1.5s ease-in-out 0s infinite;
+              animation: da-pulse 1.5s ease-in-out 0s infinite;
+    }
+
+    .pulse span {
+      border-color: #5abdde;
+      border-width: 4px;
+      top: 6px;
+      left: 6px;
+      right: 6px;
+      bottom: 6px;
+    }
+
+    .pulse:before {
+      border-color: #1f7b9a;
+      border-width: 2px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    .pulse:after {
+      border-color: #16596f;
+      border-width: 1px;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+    }
+
+    @-webkit-keyframes da-pulse {
+      0%,
+      100% {
+        -webkit-transform: scale(1.25);
+                transform: scale(1.25);
+        opacity: 0;
+      }
+      48%,
+      52% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes da-pulse {
+      0%,
+      100% {
+        -webkit-transform: scale(1.25);
+                transform: scale(1.25);
+        opacity: 0;
+      }
+      48%,
+      52% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <noscript>
     You need to enable JavaScript to run this app.
   </noscript>
+  <div id="splash-screen" style="background: white; position: fixed; z-index: 99999; top: 0; left: 0; bottom: 0; right: 0;">
+    <div class="pulse">
+      <span></span>
+      TrustStreet
+    </div>
+  </div>
   <div id="root"></div>
   <!--
       This HTML file is a template.
