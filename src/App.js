@@ -20,6 +20,12 @@ class App extends Component {
       toggle: false
     };
   }
+  componentDidMount() {
+    const element = document.getElementById('splash-screen')
+    if (element && document.body) {
+      document.body.removeChild(element)
+    }
+  }
 
   toggleDrawerMenu() {
     this.setState({
