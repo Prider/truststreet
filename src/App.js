@@ -11,6 +11,8 @@ import RecognizePage from './components/recognize';
 import RegisterPage from './components/register';
 import SignInPage from './components/signIn/signIn';
 
+import KYC from './containers/KYC';
+
 
 class App extends Component {
   constructor(props) {
@@ -42,12 +44,12 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header />
         <Switch>
           <Route exact path='/' render={(props) => <MainPage {...props} />} />
           <Route path='/recognize' render={(props) => <RecognizePage {...props} />} />
           <Route path='/register' render={(props) => <RegisterPage {...props} />} />
           <Route path='/signIn' render={(props) => <SignInPage {...props} />} />
+          <Route path='/kyc' render={(props) => <KYC {...props} />} />
           <Route path='**' render={(props) => <MainPage {...props} />} />
         </Switch>
       </div>
