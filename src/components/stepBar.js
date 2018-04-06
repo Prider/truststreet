@@ -6,7 +6,7 @@ const Container = styled.ul`
   justify-content: space-around;
   list-style-type: none;
   -webkit-padding-start: 0;
-  height: 4px;
+  height: 8px;
 
   > li {
     &:not(:first-child) {
@@ -28,9 +28,9 @@ const Item = styled.li`
 
 const StepBar = ({ ...props}) => {
   const renderSteps = () => {
-    let { maxSteps = 5, currentStep = 1} = props;
+    let { stepMax = 5, currentStep = 1} = props;
     let stepItem = [];
-    for(let i=1; i <= maxSteps; i++) {
+    for(let i=1; i <= stepMax; i++) {
         stepItem.push(
           <Item key={i} className={currentStep == i ? 'active': ''} />
         )
