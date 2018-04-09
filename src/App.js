@@ -12,6 +12,7 @@ import RegisterPage from './components/register';
 import SignInPage from './components/signIn/signIn';
 
 import KYC from './containers/KYC';
+import Dashboard from './containers/Dashboard';
 
 
 class App extends Component {
@@ -50,6 +51,7 @@ class App extends Component {
           <Route path='/register' render={(props) => <RegisterPage {...props} />} />
           <Route path='/signIn' render={(props) => <SignInPage {...props} />} />
           <Route path='/kyc' render={(props) => <KYC {...props} />} />
+          <Route path='/dashboard' render={(props) => <Dashboard {...props} />} />
           <Route path='**' render={(props) => <MainPage {...props} />} />
         </Switch>
       </div>

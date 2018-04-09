@@ -45,4 +45,5 @@ const StepBar = ({ ...props}) => {
     </div>
   )
 }
+
 export default StepBar;
