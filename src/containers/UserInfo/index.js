@@ -9,6 +9,9 @@ import StepBar from '../../components/stepBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 
+
+import Gender from './Gender'
+
 const Wrapper = styled.div`
   position:fixed;
   top: 30%;
@@ -21,7 +24,7 @@ const Wrapper = styled.div`
   background-color: #f3f3f3;
 `
 
-class KYC extends Component {
+class UserInfo extends Component {
 
   state = {
     finished: false,
@@ -71,7 +74,7 @@ class KYC extends Component {
           <Wrapper>
             <h3>{ stepIndex }</h3>
   
-            {this.renderStep(stepIndex)}
+            <Gender />
 
             <div style={{marginTop: 12}}>
               <FlatButton
@@ -95,4 +98,4 @@ class KYC extends Component {
   }
 }
 
-export default KYC;
+export default UserInfo;

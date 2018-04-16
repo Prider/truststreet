@@ -1,11 +1,13 @@
 import { combineReducers } from 'redux';
 
-// calling the default reducer to create a link
+
 import registerReducer from './register-reducer';
 import recognizeReducer from './recognize-reducer';
 
+import UserInfoReducer from '../containers/UserInfo/Gender/reducer';
+
 const rootReducers = combineReducers({
-    // add reducer files references here
+    User: UserInfoReducer,
     UserProfile: registerReducer,
     detData: recognizeReducer
 });

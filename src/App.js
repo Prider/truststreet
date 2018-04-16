@@ -11,7 +11,7 @@ import RecognizePage from './components/recognize';
 import RegisterPage from './components/register';
 import SignInPage from './components/signIn/signIn';
 
-import KYC from './containers/KYC';
+import UserInfo from './containers/UserInfo';
 import Dashboard from './containers/Dashboard';
 
 
@@ -50,7 +50,7 @@ class App extends Component {
           <Route path='/recognize' render={(props) => <RecognizePage {...props} />} />
           <Route path='/register' render={(props) => <RegisterPage {...props} />} />
           <Route path='/signIn' render={(props) => <SignInPage {...props} />} />
-          <Route path='/kyc' render={(props) => <KYC {...props} />} />
+          <Route path='/user' render={(props) => <UserInfo {...props} />} />
           <Route path='/dashboard' render={(props) => <Dashboard {...props} />} />
           <Route path='**' render={(props) => <MainPage {...props} />} />
         </Switch>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {FlatButton} from "material-ui";
+import { FlatButton } from "material-ui";
 import './theme/style.css';
 
 import FilterForm from "./components/FilterForm";

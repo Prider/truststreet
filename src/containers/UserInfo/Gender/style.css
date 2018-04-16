@@ -1,0 +1,19 @@
+.image-selected {
+    background: #eb4d33 !important;
+}
+
+.gender__icon {
+    width: 62px;
+    height: 62px;
+}
+
+.image-circle {
+    border-radius: 50%;
+    height: 62px;
+    width: 62px;
+    background-color: #fff;
+    text-align: center;
+    margin-right: 3px;
+    float: right;
+    margin: 3px;
+}
