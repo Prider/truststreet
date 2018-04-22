@@ -59,7 +59,7 @@ export const Gender = props => {
 
 const mapStateToProps = state => {
   return {
-    selectedGender: state.User.selectedGender
+    selectedGender: state.user.gender.selectedGender
   }
 }
 

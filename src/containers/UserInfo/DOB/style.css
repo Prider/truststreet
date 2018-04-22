@@ -1,0 +1,28 @@
+.date-time__content {
+    background: transparent;
+}
+
+.date-time__content .form-control {
+    display: block;
+    width: 100%;
+    padding: 0.36rem 0.54rem;
+    font-size: 15px;
+    font-family: 'sanpro-regular';
+    line-height: 1.80;
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 2px;
+    -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+    -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+}
+
+.date-time__content input {
+    background: url('/fna/assets/images/icon/ic_calendar_small.svg') no-repeat 150px 12px;
+    background-size: 20px;
+    display: block;
+    padding-left: 90px;
+}

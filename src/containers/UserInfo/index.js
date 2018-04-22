@@ -11,6 +11,7 @@ import FlatButton from 'material-ui/FlatButton';
 
 
 import Gender from './Gender'
+import DOB from './DOB'
 
 const Wrapper = styled.div`
   position:fixed;
@@ -76,7 +77,10 @@ class UserInfo extends Component {
   
             <Gender />
 
-            <div style={{marginTop: 12}}>
+            <DOB />
+
+            {
+            /*<div style={{marginTop: 12}}>
               <FlatButton
                 label="Back"
                 disabled={stepIndex === 1}
@@ -91,6 +95,8 @@ class UserInfo extends Component {
                 onClick={this.handleNext}
               />
             </div>
+            */
+            }
 
           </Wrapper>
       </div>
