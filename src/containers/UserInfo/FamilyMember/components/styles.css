@@ -22,6 +22,7 @@
     font-size: 0.3em;
     border-radius: 25px;
     border: 1px solid #e5e8ed;
+    z-index: 1;
 }
 .year-picker__wrap.center {
     left: 50%;
