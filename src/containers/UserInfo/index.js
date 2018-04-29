@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components'
 
-import Header from '../../components/header/header';
+import Header2 from '../../components/header/header2';
 import TextField from 'material-ui/TextField';
-
 
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
@@ -75,49 +74,51 @@ class UserInfo extends Component {
 
   render() {
     const DOBStyles = {
-      "font-size": "16px",
+      fontSize: "16px",
       "width": "256px",
       "display": "inline-block",
       "position": "relative",
-      "background-color": "transparent",
-      "font-family": "Poppins, sans-serif",
+      backgroundColor: "transparent",
+      fontFamily: "Poppins, sans-serif",
       "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
       "cursor": "auto"
     }
     return (
-      <div className="container">
-        <h1>Your Info</h1>
-        <form className="cf">
+      <div>
+        <div className="container">
+          <h1>Your Info</h1>
+          <form className="cf">
 
-          <section className="plan cf">
-            <span className="monthly-label four col">Gender:</span>
-            <Gender className="monthly-label four col" />
-          </section>
+            <section className="plan cf">
+              <span className="monthly-label four col col-left">Gender:</span>
+              <div className="col-right"><Gender/></div>
+            </section>
 
-          <section className="plan cf">
-            <span className="monthly-label four col">DOB:</span>
-            <div>
-              <DatePicker
-                style={DOBStyles}
-                floatingLabelText="Your Date of Birth"
-                autoOk={this.state.autoOk}
-                minDate={this.state.minDate}
-                maxDate={this.state.maxDate}
-              />
-            </div>
-          </section>
+            <section className="plan cf">
+              <span className="monthly-label four col col-left">DOB:</span>
+              <div className="col-right">
+                <DatePicker
+                  style={DOBStyles}
+                  floatingLabelText="Your Date of Birth"
+                  autoOk={this.state.autoOk}
+                  minDate={this.state.minDate}
+                  maxDate={this.state.maxDate}
+                />
+              </div>
+            </section>
 
-          <section className="payment-type cf">
-            <span className="monthly-label four col">Material Status:</span>
-            <MaritalStatus />
-          </section>
+            <section className="plan cf">
+              <span className="monthly-label four col col-left">Material Status:</span>
+              <div className="col-right"><MaritalStatus /></div>
+            </section>
 
-          <section className="payment-type cf">
-            <span className="monthly-label four col">Kid:</span>
-          <Kids />
-        </section>	
+            <section className="plan cf">
+              <span className="monthly-label four col col-left">Kid:</span>
+              <div className="col-right"><Kids /></div>
+            </section>	
 
-        </form>
+          </form>
+        </div>
       </div>
     );
   }

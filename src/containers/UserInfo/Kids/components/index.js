@@ -10,7 +10,6 @@ import {
 const Kids = props => {
   const selectedKidItem = props.selectedKidItem
   const maxSelectYearBornItems = props.maxSelectYearBornItems
-
   return (
     <div className="family-wrap">
       <FamilyMember

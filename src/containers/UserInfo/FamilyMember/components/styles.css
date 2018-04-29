@@ -21,6 +21,7 @@
     text-align: center;
     font-size: 0.3em;
     border-radius: 25px;
+    border: 1px solid #e5e8ed;
 }
 .year-picker__wrap.center {
     left: 50%;
@@ -29,7 +30,7 @@
 }
 
 .year-picker {
-    background-color: rgb(153, 74, 74);
+    background-color: white;
     width: 68px;
     height: 68px;
     margin-right: 3px;
@@ -44,7 +45,7 @@
     border-radius: 50%;
   }
   .year-picker .year-picker__icon.icon-active {
-    background-color: red;
+    background-color: #0069ff;
   }
   .year-picker .year-picker__list {
     height: 100%;
@@ -59,10 +60,10 @@
     padding-top: 8px;
   }
   .year-picker .year-picker__list li.active-year {
-    background-color: red;
+    background-color: #0069ff;
     color: white;
   }
   .year-picker .year-picker__list li:hover {
-    background-color: red;
+    background-color: #0069ff;
     color: white;
   }

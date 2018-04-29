@@ -12,8 +12,8 @@ const mapStateToProps = state => ({
   maxSelectYearBornItems: getMaxYearBornForKid(state.user.dob.date)
 })
 
-const getMaxYearBornForKid = (date = new Date()) => {
-  if (date !== '') return new Date().getFullYear() - date.getFullYear()
+const getMaxYearBornForKid = (date) => {
+  if (date) return new Date().getFullYear() - date.getFullYear()
 
   return DEFAULT_MAX_NUMBER_YEAR_ITEM
 }
