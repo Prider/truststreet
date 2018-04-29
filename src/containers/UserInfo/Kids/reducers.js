@@ -3,7 +3,7 @@ import {
   FAMILY_MEMBER_NONE_KID,
   FAMILY_MEMBER_CHILD_BOY,
   FAMILY_MEMBER_CHILD_GIRL
-} from '../../../constants'
+} from '../../../constants/actions'
 
 const defaultState = []
 

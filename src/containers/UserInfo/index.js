@@ -13,6 +13,7 @@ import Checkbox from 'material-ui/Checkbox';
 import Gender from './Gender'
 import DatePicker from 'material-ui/DatePicker';
 import MaritalStatus from './MaritalStatus';
+import Kids from './Kids';
 
 import './styles.css'
 
@@ -96,23 +97,25 @@ class UserInfo extends Component {
           <section className="plan cf">
             <span className="monthly-label four col">DOB:</span>
             <div>
-            {
-              // <DatePicker
-              //   style={DOBStyles}
-              //   floatingLabelText="Your Date of Birth"
-              //   autoOk={this.state.autoOk}
-              //   minDate={this.state.minDate}
-              //   maxDate={this.state.maxDate}
-              // />
-            }
-
+              <DatePicker
+                style={DOBStyles}
+                floatingLabelText="Your Date of Birth"
+                autoOk={this.state.autoOk}
+                minDate={this.state.minDate}
+                maxDate={this.state.maxDate}
+              />
             </div>
           </section>
 
           <section className="payment-type cf">
             <span className="monthly-label four col">Material Status:</span>
             <MaritalStatus />
-          </section>	
+          </section>
+
+          <section className="payment-type cf">
+            <span className="monthly-label four col">Kid:</span>
+          <Kids />
+        </section>	
 
         </form>
       </div>

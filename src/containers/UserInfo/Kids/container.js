@@ -1,3 +1,4 @@
+import React from 'react'
 import Kids from '../Kids/components'
 import { connect } from 'react-redux'
 import { DEFAULT_MAX_NUMBER_YEAR_ITEM } from '../../../constants'
@@ -6,15 +7,15 @@ export const KidsContainer = props => {
   return <Kids {...props} />
 }
 
-const getMaxYearBornForKid = date => {
+const mapStateToProps = state => ({
+  selectedKidItem: state.user.familyMember.kids,
+  maxSelectYearBornItems: getMaxYearBornForKid(state.user.dob.date)
+})
+
+const getMaxYearBornForKid = (date = new Date()) => {
   if (date !== '') return new Date().getFullYear() - date.getFullYear()
 
   return DEFAULT_MAX_NUMBER_YEAR_ITEM
 }
-
-const mapStateToProps = state => ({
-  selectedKidItem: state.user.familyMember.kids,
-  maxSelectYearBornItems: getMaxYearBornForKid(state.fna.customer.dob)
-})
 
 export default connect(mapStateToProps, {})(KidsContainer)

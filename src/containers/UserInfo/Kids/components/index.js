@@ -1,10 +1,11 @@
+import React from 'react'
 import { FamilyMember } from '../../FamilyMember'
 import {
   FAMILY_MEMBER_NONE_KID,
   FAMILY_MEMBER_CHILD_BOY,
   FAMILY_MEMBER_CHILD_GIRL,
   DEFAULT_KID_SELECT_YEAR
-} from '../../constants'
+} from '../../../../constants/actions'
 
 const Kids = props => {
   const selectedKidItem = props.selectedKidItem
