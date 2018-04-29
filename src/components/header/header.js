@@ -13,8 +13,10 @@ import Avatar from 'material-ui/Avatar';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 
+
 import firebase from 'firebase';
 import fireApp from '../../services/firebase';
+import history from '../../services/history'
 
 import LoginPopup from '../signIn/login';
 
@@ -31,9 +33,9 @@ class Header extends Component {
         this.state = {
             signInStatus: false,
             popupStatus: false,
-            userProfile: null
-        };
-    //    this.initSession();
+            userProfile: null,
+            openDrawer: false
+        }
     }
 
     componentWillReceiveProps(nextProps) {
@@ -97,56 +99,67 @@ class Header extends Component {
             // An error happened.
           });
     }
-    renderElementRight() {
-        const styles = {
-            button: {
-              margin: 3,
-              color: 'rgb(244, 67, 54)'
-            }
-        };
-        return (
-            <div>
-                <RaisedButton
-                    label="Login"
-                    backgroundColor={indigoA700}
-                    labelPosition="before"
-                    style={styles.button}
-                    onClick={this.showPopup}
-                    >
-                </RaisedButton>
-                <LoginPopup
-                    status={this.state.popupStatus}
-                    hidePopup={this.hidePopup}
-                    signInFacebookUser={this.signInFacebookUser}
-                />
-            </div>
-        );
+
+    // for Drawer
+    handleToggle = () => this.setState({ openDrawer: !this.state.openDrawer });
+
+
+    handleDrawerGoTo = route => {
+        history.push(route);
+        this.setState({openDrawer: false});
     }
+
+    renderElementRight() {
+        // const styles = {
+        //     button: {
+        //       margin: 3,
+        //       color: 'rgb(244, 67, 54)'
+        //     }
+        // };
+        // return (
+        //     <div>
+        //         <RaisedButton
+        //             label="Login"
+        //             backgroundColor={indigoA700}
+        //             labelPosition="before"
+        //             style={styles.button}
+        //             onClick={this.showPopup}
+        //             >
+        //         </RaisedButton>
+        //         <LoginPopup
+        //             status={this.state.popupStatus}
+        //             hidePopup={this.hidePopup}
+        //             signInFacebookUser={this.signInFacebookUser}
+        //         />
+        //     </div>
+        // );
+    }
+
     renderUserProfile() {
-        const photoURL = this.state.userProfile
-                ? this.state.userProfile.photoURL 
-                : `img/hieu.jpeg`;
-        return (
-            <div>
-                <IconMenu
-                    iconButtonElement={
-                    <IconButton>
-                        <Avatar
-                        src={photoURL}
-                        size={30}
-                        style={{ margin: 5}}
-                        />
-                    </IconButton>
-                    }
-                    anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-                    targetOrigin={{horizontal: 'right', vertical: 'top'}}
-                >
-                <MenuItem primaryText="Settings" />
-                <MenuItem primaryText="Help" />
-                <MenuItem primaryText="Sign out" onClick={() => this.signOutFacebookUser()}/>
-                </IconMenu>
-            </div>
-        );
+        // const photoURL = this.state.userProfile
+        //         ? this.state.userProfile.photoURL 
+        //         : `img/hieu.jpeg`;
+        // return (
+        //     <div>
+        //         <IconMenu
+        //             iconButtonElement={
+        //             <IconButton>
+        //                 <Avatar
+        //                 src={photoURL}
+        //                 size={30}
+        //                 style={{ margin: 5}}
+        //                 />
+        //             </IconButton>
+        //             }
+        //             anchorOrigin={{horizontal: 'right', vertical: 'top'}}
+        //             targetOrigin={{horizontal: 'right', vertical: 'top'}}
+        //         >
+        //         <MenuItem primaryText="Settings" />
+        //         <MenuItem primaryText="Help" />
+        //         <MenuItem primaryText="Sign out" onClick={() => this.signOutFacebookUser()}/>
+        //         </IconMenu>
+        //     </div>
+        // );
     }
     render() {
         return (
@@ -154,7 +167,7 @@ class Header extends Component {
                 <AppBar
                 className='app-bar'
                 title={
-                    <Avatar backgroundColor={indigoA700}>T</Avatar>
+                    <Avatar backgroundColor={indigoA700} onClick={this.handleToggle}>T</Avatar>
                 }
                 showMenuIconButton={false}
                 style= {{position: 'fixed' }}
@@ -164,6 +177,17 @@ class Header extends Component {
                     : this.renderElementRight()
                 }
                 />
+                <Drawer
+                    docked={false}
+                    width={200}
+                    open={this.state.openDrawer}
+                    onRequestChange={(open) => this.setState({openDrawer: open})}
+                >
+                    <MenuItem onClick={() => this.handleDrawerGoTo("/")}>Main</MenuItem>
+                    <MenuItem onClick={() => this.handleDrawerGoTo("/kyc")}>KYC</MenuItem>
+                    <MenuItem onClick={() => this.handleDrawerGoTo("/question")}>Questions</MenuItem>
+                    <MenuItem onClick={() => this.handleDrawerGoTo("/")}>Sign Out</MenuItem>
+                </Drawer>
             </div>
         );
     }

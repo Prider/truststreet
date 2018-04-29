@@ -10,7 +10,7 @@ import {
   FAMILY_MEMBER_FEMALE_SPOUSE,
   FAMILY_MEMBER_NONE_SPOUSE,
   FAMILY_MEMBER_NONE_KID
-} from '../constants'
+} from '../../../constants'
 import FamilyMember from './components'
 
 export const getImagePath = (memberType, isActive) => {

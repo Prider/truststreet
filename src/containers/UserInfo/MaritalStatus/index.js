@@ -1,83 +1,17 @@
-import { FamilyMember } from '../../FamilyMember'
-import {
-  FAMILY_MEMBER_NONE_SPOUSE,
-  FAMILY_MEMBER_MALE_SPOUSE,
-  FAMILY_MEMBER_FEMALE_SPOUSE,
-  DEFAULT_SELECTED_YEAR,
-  DEFAULT_MAX_NUMBER_YEAR_ITEM
-} from '../../../constants/actions'
+import React from 'react'
+import MaritalStatus from './components'
+import { connect } from 'react-redux'
 
-const MaritalStatus = props => {
-  const selectedMaritalItem = props.selectedMaritalItem
-  return (
-    <div className="family-wrap">
-      <FamilyMember
-        memberType={FAMILY_MEMBER_NONE_SPOUSE}
-        maxYear={0}
-        numOfItems={0}
-        iconPosition="left"
-        isActive={isMaritalItemActive(
-          FAMILY_MEMBER_NONE_SPOUSE,
-          selectedMaritalItem
-        )}
-        selectedYear={getSelectedSpouseYear(
-          FAMILY_MEMBER_NONE_SPOUSE,
-          selectedMaritalItem
-        )}
-      />
-
-      <FamilyMember
-        memberType={FAMILY_MEMBER_MALE_SPOUSE}
-        maxYear={DEFAULT_SELECTED_YEAR}
-        numOfItems={DEFAULT_MAX_NUMBER_YEAR_ITEM}
-        iconPosition="center"
-        isActive={isMaritalItemActive(
-          FAMILY_MEMBER_MALE_SPOUSE,
-          selectedMaritalItem
-        )}
-        selectedYear={getSelectedSpouseYear(
-          FAMILY_MEMBER_MALE_SPOUSE,
-          selectedMaritalItem
-        )}
-      />
-
-      <FamilyMember
-        memberType={FAMILY_MEMBER_FEMALE_SPOUSE}
-        maxYear={DEFAULT_SELECTED_YEAR}
-        numOfItems={DEFAULT_MAX_NUMBER_YEAR_ITEM}
-        iconPosition="right"
-        isActive={isMaritalItemActive(
-          FAMILY_MEMBER_FEMALE_SPOUSE,
-          selectedMaritalItem
-        )}
-        selectedYear={getSelectedSpouseYear(
-          FAMILY_MEMBER_FEMALE_SPOUSE,
-          selectedMaritalItem
-        )}
-      />
-    </div>
-  )
+export const MaritalStatusContainer = ({selectedMaritalItem}) => {
+   return (
+        <MaritalStatus selectedMaritalItem={selectedMaritalItem} />
+    )
 }
 
-export const isMaritalItemActive = (memberType, selectedItem) => {
-  if (selectedItem) {
-    return memberType === selectedItem.memberType
-  }
-  return false
+const mapStateToProps = (state) => {
+    return {
+        selectedMaritalItem: state.user.familyMember.spouse
+    }
 }
 
-export const getSelectedSpouseYear = (memberType, selectedMaritalItem) => {
-  if (selectedMaritalItem && selectedMaritalItem.memberType === memberType) {
-    return selectedMaritalItem.year
-  }
-
-  return DEFAULT_SELECTED_YEAR
-}
-
-const mapStateToProps = state => {
-  return {
-    selectedMaritalItem: state.fna.customer.familyMember.spouse
-  }
-}
-
-export default connect(mapStateToProps, null)(MaritalStatus)
+export default connect(mapStateToProps, null)(MaritalStatusContainer)

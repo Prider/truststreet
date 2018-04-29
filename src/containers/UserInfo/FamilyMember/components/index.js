@@ -1,6 +1,6 @@
+import React from 'react'
 import YearPicker from './YearPicker'
-import { BASE_IMAGE_PATH } from '../../../../../constants/path'
-
+import './styles.css'
 const FamilyMember = ({
   memberImagePath,
   onPickYear,
@@ -19,14 +19,16 @@ const FamilyMember = ({
     ? 'year-picker__icon icon-active'
     : 'year-picker__icon'
 
+  const imagePath = require('../../../../assets/images/icon/' +
+    memberImagePath)
+
   return (
     <div className="year-picker">
       <div className={activeIcon} style={stylePosition} onClick={onToggle}>
         <div
           className="icon-user"
           style={{
-            background: `url(${BASE_IMAGE_PATH +
-              memberImagePath}) no-repeat center center/40%`
+            background: `url(${imagePath}) no-repeat center center/40%`
           }}
         />
       </div>
@@ -43,5 +45,6 @@ const FamilyMember = ({
     </div>
   )
 }
+
 
 export default FamilyMember

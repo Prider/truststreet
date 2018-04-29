@@ -1,0 +1,68 @@
+
+.icon-user {
+    width: 100%;
+    height: 100%;
+}
+
+.family-avatar__icon {
+    width:  70px;
+    height:  70px;
+    margin-bottom: 5px;
+}
+
+.year-picker__wrap {
+    background-color: white;
+    height: 13.3em;
+    width: 192px;
+    position: absolute;
+    top: -1px;
+    right: 0;
+    padding-top: 4em;
+    text-align: center;
+    font-size: 0.3em;
+    border-radius: 25px;
+}
+.year-picker__wrap.center {
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.year-picker {
+    background-color: rgb(153, 74, 74);
+    width: 68px;
+    height: 68px;
+    margin-right: 3px;
+    margin-top: 3px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+  }
+  .year-picker .year-picker__icon {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+  }
+  .year-picker .year-picker__icon.icon-active {
+    background-color: red;
+  }
+  .year-picker .year-picker__list {
+    height: 100%;
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    overflow-y: scroll;
+  }
+  .year-picker .year-picker__list li {
+    cursor: pointer;
+    height: 30px;
+    padding-top: 8px;
+  }
+  .year-picker .year-picker__list li.active-year {
+    background-color: red;
+    color: white;
+  }
+  .year-picker .year-picker__list li:hover {
+    background-color: red;
+    color: white;
+  }

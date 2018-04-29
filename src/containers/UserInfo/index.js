@@ -4,33 +4,41 @@ import styled from 'styled-components'
 
 import Header from '../../components/header/header';
 import TextField from 'material-ui/TextField';
-import StepBar from '../../components/stepBar';
+
 
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
-
+import Checkbox from 'material-ui/Checkbox';
 
 import Gender from './Gender'
-import DOB from './DOB'
+import DatePicker from 'material-ui/DatePicker';
+import MaritalStatus from './MaritalStatus';
 
-const Wrapper = styled.div`
-  position:fixed;
-  top: 30%;
-  left: 50%;
-  width:30em;
-  height:18em;
-  margin-top: -9em; /*set to a negative number 1/2 of your height*/
-  margin-left: -15em; /*set to a negative number 1/2 of your width*/
-  border: 1px solid #ccc;
-  background-color: #f3f3f3;
-`
+import './styles.css'
+
+
+function disableWeekends(date) {
+  return date.getDay() === 0 || date.getDay() === 6;
+}
 
 class UserInfo extends Component {
 
-  state = {
-    finished: false,
-    stepIndex: 1,
-    stepMax: 5
+  constructor(props) {
+    super(props);
+
+    const minDate = new Date();
+    const maxDate = new Date();
+    minDate.setFullYear(minDate.getFullYear() - 1);
+    minDate.setHours(0, 0, 0, 0);
+    maxDate.setFullYear(maxDate.getFullYear() + 1);
+    maxDate.setHours(0, 0, 0, 0);
+
+    this.state = {
+      minDate: minDate,
+      maxDate: maxDate,
+      autoOk: false,
+      disableYearSelection: false,
+    };
   }
 
   handleNext = () => {
@@ -65,40 +73,48 @@ class UserInfo extends Component {
 
 
   render() {
-    const contentStyle = {margin: '0 16px'};
-    const ButtonStyle = {background: '#00008F'};
-
-    const {finished, stepIndex, stepMax} = this.state;
+    const DOBStyles = {
+      "font-size": "16px",
+      "width": "256px",
+      "display": "inline-block",
+      "position": "relative",
+      "background-color": "transparent",
+      "font-family": "Poppins, sans-serif",
+      "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+      "cursor": "auto"
+    }
     return (
-      <div>
-          <StepBar stepMax={stepMax} currentStep={stepIndex}/>
-          <Wrapper>
-            <h3>{ stepIndex }</h3>
-  
-            <Gender />
+      <div className="container">
+        <h1>Your Info</h1>
+        <form className="cf">
 
-            <DOB />
+          <section className="plan cf">
+            <span className="monthly-label four col">Gender:</span>
+            <Gender className="monthly-label four col" />
+          </section>
 
+          <section className="plan cf">
+            <span className="monthly-label four col">DOB:</span>
+            <div>
             {
-            /*<div style={{marginTop: 12}}>
-              <FlatButton
-                label="Back"
-                disabled={stepIndex === 1}
-                onClick={this.handlePrev}
-                style={{marginRight: 12}}
-              />
-              <RaisedButton
-                style={ButtonStyle}
-                label={ stepIndex === 2 ? 'Finish' : 'Next'}
-                disabled={stepIndex > stepMax}
-                primary={true}
-                onClick={this.handleNext}
-              />
-            </div>
-            */
+              // <DatePicker
+              //   style={DOBStyles}
+              //   floatingLabelText="Your Date of Birth"
+              //   autoOk={this.state.autoOk}
+              //   minDate={this.state.minDate}
+              //   maxDate={this.state.maxDate}
+              // />
             }
 
-          </Wrapper>
+            </div>
+          </section>
+
+          <section className="payment-type cf">
+            <span className="monthly-label four col">Material Status:</span>
+            <MaritalStatus />
+          </section>	
+
+        </form>
       </div>
     );
   }

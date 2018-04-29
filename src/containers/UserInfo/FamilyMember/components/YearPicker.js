@@ -1,3 +1,4 @@
+import React from 'react'
 import YearItem from './YearItem'
 
 export default ({ onPickYear, maxYear, numOfItems, selectedYear }) => {

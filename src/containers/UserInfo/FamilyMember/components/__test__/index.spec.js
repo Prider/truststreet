@@ -6,10 +6,11 @@ const setup = propOverrides => {
   const props = {
     maxYear: 1980,
     numOfItems: 100,
+    memberImagePath: 'ic_circle_empty.svg',
     ...propOverrides
   }
 
-  const wrapper = shallow(<FamilyMember {...props}/>)
+  const wrapper = shallow(<FamilyMember {...props} />)
   return {
     props,
     wrapper
@@ -32,7 +33,9 @@ describe('FamilyMember component', () => {
     })
 
     test('should render active class for year picker icon', () => {
-      const props = { isActive: true }
+      const { props } = setup({
+        isActive: true
+      })
       wrapper = shallow(<FamilyMember {...props} />)
 
       expect(wrapper.find('div.icon-active')).toHaveLength(1)
@@ -43,14 +46,14 @@ describe('FamilyMember component', () => {
     })
 
     test('should have YearPicker if isShowYearPicker', () => {
-      const {wrapper} = setup({
+      const { wrapper } = setup({
         isShowYearPicker: true
       })
       expect(wrapper.find(YearPicker)).toHaveLength(1)
     })
 
     test('should not have YearPicker if not isShowYearPicker', () => {
-      const {wrapper} = setup({
+      const { wrapper } = setup({
         isShowYearPicker: false
       })
       expect(wrapper.find(YearPicker)).toHaveLength(0)
