@@ -4,6 +4,7 @@ import DetailWrapperItem from './DetailWrapperItem'
 
 class DetailsSliders extends Component {
   componentWillReceiveProps(newProps) {
+    console.log('newProps.currentStep', newProps.currentStep)
     this.slider.slickGoTo(newProps.currentStep)
   }
 

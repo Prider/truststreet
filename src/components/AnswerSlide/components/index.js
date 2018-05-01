@@ -14,8 +14,6 @@ const AnswerSlide = props => {
   const noColor = props.qa.answer === NO ? '#eb4d33' : ''
   const yesIcon = props.qa.answer === YES ? icon_yes_default : icon_yes_selected
   const noIcon = props.qa.answer === NO ? icon_no_default : icon_no_selected
-  console.log('YES:', YES)
-  console.log('NO:', NO)
   return (
     <div className="fna-answer-slide">
       <AnswerItem

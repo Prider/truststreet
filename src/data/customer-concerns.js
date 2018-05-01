@@ -13,7 +13,7 @@ const concerns = [
         ],
         question: 'Are you covered for this?'
       },
-      coverage: '',
+      coverage: 'YES',
       QA: [
         {
           id: 1,
@@ -82,7 +82,7 @@ const concerns = [
         ],
         question: 'Are you covered for this?'
       },
-      coverage: '',
+      coverage: 'YES',
       QA: [
         {
           id: 1,
@@ -180,7 +180,7 @@ const concerns = [
         ],
         question: 'Are you covered for this?'
       },
-      coverage: '',
+      coverage: 'YES',
       QA: [
         {
           id: 1,
@@ -278,7 +278,7 @@ const concerns = [
         ],
         question: 'Are you covered for this?'
       },
-      coverage: '',
+      coverage: 'YES',
       QA: [
         {
           id: 1,
@@ -326,7 +326,7 @@ const concerns = [
         ],
         question: 'Are you covered for this?'
       },
-      coverage: '',
+      coverage: 'YES',
       QA: [],
       priority: 0,
       extraQA: []

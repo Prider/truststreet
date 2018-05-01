@@ -27,9 +27,9 @@ export const isAnswerAllQuestion = concernWithYesCoverage => {
 export const getNeedAndConcernsWithYesCoverage = allNeedConcerns => {
   let needAndConcerns = []
   allNeedConcerns.forEach(concern => {
-    // if (concern.coverage === YES && concern.product !== 'iLegacy') {
+    if (concern.coverage === YES && concern.product !== 'iLegacy') {
       needAndConcerns.push(concern)
-    // }
+    }
   })
 
   return needAndConcerns
