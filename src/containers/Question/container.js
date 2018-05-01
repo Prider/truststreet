@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import DetailsSliders from './components'
 import { bindActionCreators } from 'redux'
+
 import { answerQA } from './actions'
 import { isCompleteAllQuestionOfCurrentStep } from '../../constants/actions'
-
-import { Paging } from '../../components/Paging'
-
-import img_bg_question from '../../assets/images/img_bg_question.svg'
 import { YES } from '../../constants/question'
 
+import { Paging } from '../../components/Paging'
+import DetailsSliders from './components'
+
+import img_bg_question from '../../assets/images/img_bg_question.svg'
 
 export const isAnswerAllQuestion = concernWithYesCoverage => {
   let isCompleted = true
@@ -20,7 +20,6 @@ export const isAnswerAllQuestion = concernWithYesCoverage => {
       }
     })
   })
-
   return isCompleted
 }
 
