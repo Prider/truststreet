@@ -10,6 +10,7 @@ import RegisterPage from './components/register';
 import SignInPage from './components/signIn/signIn';
 
 import UserInfo from './containers/UserInfo';
+import Question from './containers/Question';
 import Dashboard from './containers/Dashboard';
 
 
@@ -51,6 +52,9 @@ class App extends Component {
           <Route path='/signIn' render={(props) => <SignInPage {...props} />} />
           <Route path='/kyc' render={(props) => {
             return (<UserInfo {...props} />)
+          }} />
+          <Route path='/question' render={(props) => {
+            return (<Question {...props} />)
           }} />
           <Route path='/dashboard' render={(props) => <Dashboard {...props} />} />
           <Route path='**' render={(props) => <MainPage {...props} />} />

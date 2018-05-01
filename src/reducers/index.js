@@ -9,11 +9,15 @@ import dobReducer from '../containers/UserInfo/DOB/reducer'
 import FamilyMemberReducer from '../containers/UserInfo/FamilyMember/reducers'
 import MaritalStatusReducer from '../containers/UserInfo/MaritalStatus/reducer'
 
+
+import QuestionReducer from '../containers/Question/reducer'
+
 const userInfoReducer = combineReducers({
     gender: genderReducer,
     dob: dobReducer,
     maritalStatus: MaritalStatusReducer,
-    familyMember: FamilyMemberReducer
+    familyMember: FamilyMemberReducer,
+    needAndConcerns: QuestionReducer
 })
 
 const rootReducers = combineReducers({

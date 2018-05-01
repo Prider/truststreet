@@ -12,4 +12,19 @@ export const DEFAULT_SELECTED_SPOUSE_YEAR = new Date().getFullYear() - 18
 export const DEFAULT_MAX_NUMBER_YEAR_ITEM = 63
 export const DEFAULT_KID_SELECT_YEAR = new Date().getFullYear()
 
+export const USER_FINISH_ALL_ANSWER_OF_CURRENT_STEP = 'USER_FINISH_ALL_ANSWER_OF_CURRENT_STEP'
+export const isCompleteAllQuestionOfCurrentStep = (
+  isEnabled,
+  stepSkipped = 0,
+  autoNext = false
+) => ({
+  type: USER_FINISH_ALL_ANSWER_OF_CURRENT_STEP,
+  payload: {
+    canNext: isEnabled,
+    skip: stepSkipped,
+    autoNext: autoNext
+  }
+})
+
+
 
