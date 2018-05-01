@@ -57,7 +57,7 @@
   background: #a0d5b3;
 }
 .paging .answered {
-  background-color: rgba(0, 0, 143, 0.5);
+  background-color: rgba(0, 0, 143, 0.5) !important;
 }
   
 .paging-list {

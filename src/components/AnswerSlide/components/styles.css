@@ -1,0 +1,81 @@
+@keyframes middleButtonNo {
+  from {
+    left: 50%;
+    visibility: visible;
+  }
+  to {
+    left: 98%;
+    transform: translateX(-98%);
+    visibility: hidden;
+    z-index: 10;
+  }
+}
+  
+@keyframes middleButtonYesToNo {
+  from {
+    left: 2%;
+    transform: translateX(-2%);
+    visibility: visible;
+  }
+  to {
+    left: 98%;
+    transform: translateX(-98%);
+    visibility: hidden;
+    z-index: 10;
+  }
+}
+
+@keyframes middleButtonNoToYes {
+  from {
+    left: 98%;
+    transform: translateX(-98%);
+    visibility: visible;
+  }
+  to {
+    left: 2%;
+    transform: translateX(-2%);
+    visibility: hidden;
+    z-index: 10;
+  }
+}
+
+@keyframes middleButtonNo {
+  from {
+    left: 50%;
+    visibility: visible;
+  }
+  to {
+    left: 98%;
+    transform: translateX(-98%);
+    visibility: hidden;
+    z-index: 10;
+  }
+}
+
+.middle-button-yes {
+  animation-name: middleButtonNo;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.middle-button-yes-to-no {
+  animation-name: middleButtonYesToNo;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.middle-button-no-to-yes {
+  animation-name: middleButtonNoToYes;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.middle-button-no {
+  animation-name: middleButtonNo;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}

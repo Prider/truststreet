@@ -9,11 +9,15 @@ import defaultIcon from '../../../assets/images/icon/ic_male_circle.svg'
 import icon_no_selected from '../../../assets/images/icon/ic_no_selected.svg'
 import icon_no_default from '../../../assets/images/icon/ic_no_white.svg'
 
+import './styles.css'
+
 const AnswerSlide = props => {
   const yesColor = props.qa.answer === YES ? '#eb4d33' : ''
   const noColor = props.qa.answer === NO ? '#eb4d33' : ''
   const yesIcon = props.qa.answer === YES ? icon_yes_default : icon_yes_selected
   const noIcon = props.qa.answer === NO ? icon_no_default : icon_no_selected
+
+  console.log('props.fromTo:', props.fromTo)
   return (
     <div className="fna-answer-slide">
       <AnswerItem

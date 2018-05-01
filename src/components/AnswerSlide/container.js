@@ -11,7 +11,6 @@ class AnswerSlideContainer extends Component {
   }
 
   handleAnswerYesNo = answer => {
-    console.log('answer:', answer)
     if (this.state.currentAnswer !== answer) {
       this.setState({
         currentAnswer: answer
