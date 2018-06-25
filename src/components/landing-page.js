@@ -50,13 +50,13 @@ class LandingPage extends Component {
                         <Card>
                             <CardMedia
                             >
-                                <img className='landingImage' src={registerImg} alt="register" />
+                                <img className='landingImage' src={registerImg} alt="kyc" />
                             </CardMedia>
-                            <CardTitle title="Register Face" />
+                            <CardTitle title="KYC" />
                             <CardText>
                             </CardText>
                             <CardActions>
-                                <Link to={'/register'}><FlatButton className='flat-btn' label="REGISTER" /></Link>
+                                <Link to={'/kyc'}><FlatButton className='flat-btn' label="kyc" /></Link>
                             </CardActions>
                         </Card>
                     </Col>
@@ -66,11 +66,11 @@ class LandingPage extends Component {
                             >
                                 <img className='landingImage' src={galleryImg} alt="gallery-face" />
                             </CardMedia>
-                            <CardTitle title="Face Gallery" />
+                            <CardTitle title="Question" />
                             <CardText>
                             </CardText>
                             <CardActions>
-                                <FlatButton className='flat-btn' label="GALLERY" />
+                                <Link to={'/question'}><FlatButton className='flat-btn' label="question" /></Link>
                             </CardActions>
                         </Card>
                     </Col>

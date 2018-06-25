@@ -50,12 +50,8 @@ class App extends Component {
           <Route path='/recognize' render={(props) => <RecognizePage {...props} />} />
           <Route path='/register' render={(props) => <RegisterPage {...props} />} />
           <Route path='/signIn' render={(props) => <SignInPage {...props} />} />
-          <Route path='/kyc' render={(props) => {
-            return (<UserInfo {...props} />)
-          }} />
-          <Route path='/question' render={(props) => {
-            return (<Question {...props} />)
-          }} />
+          <Route path='/kyc' render={(props) => <UserInfo {...props} />} />
+          <Route path='/question' render={(props) => <Question {...props} />} />
           <Route path='/dashboard' render={(props) => <Dashboard {...props} />} />
           <Route path='**' render={(props) => <MainPage {...props} />} />
         </Switch>
